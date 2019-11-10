@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+
+    <script type="text/babel">
+        let dom = document.querySelector('#root');
+        
+        
+        const dfn = {
+            fontSize: "20pt",
+            padding: "10px",
+        }
+        const dt = {
+            fontSize: "16pt",
+            color:'white',
+            backgroundColor:'#006',
+            padding:'10px',
+        }
+        const dd = {
+            color:'black',
+            padding:'10px',
+        }
+        
+        
+        let data = {
+            url:'http://google.com',
+            title:'Google',
+            caption:'※Googleの検索サイトです。'
+        };
+        
+        
+        let el = (
+        <div>
+            {(()=>
+            <dl>
+                <dt style={dt}><dfn style={dfn}>
+                    {data.title}
+                </dfn></dt>
+                <dd style={dd}>
+                    {data.caption}
+                </dd>
+                <dd style={dd}>
+                    <a href={data.url}>※{data.title}に移動</a>
+                </dd>
+            </dl>
+            )()}
+        </div>
+        );
+        
+        
+        ReactDOM.render(el, dom);
+    </script>
+                       
+</body>
+</html>

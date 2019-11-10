@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script> 
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+
+
+    <script type="text/babel">
+        let dom = document.querySelector('#root');
+        
+        
+        let message_true = "メッセージを表示します。";
+        let message_false = "メッセージはありません……";
+        
+        
+        const msg_true = {
+            fontSize:"20pt",
+            fontWeight: "bold",
+            color:"red",
+            border:"2px solid green"
+        }
+        const msg_false = {
+            fontSize:"16pt",
+            fontWeight: "plain",
+            color:"white",
+            backgroundColor:"blue",
+        }
+        
+        
+        let flg = true; // ★
+        
+        
+        let el = (
+            <div>
+            {flg ?
+                <p style={msg_true}>{message_true}</p>
+            :
+                <p style={msg_false}>{message_false}</p>
+            }
+            </div>
+        );
+        
+        
+        ReactDOM.render(el, dom);
+        </script>               
+</body>
+</html>
